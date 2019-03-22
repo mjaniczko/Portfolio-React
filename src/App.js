@@ -4,6 +4,12 @@ class App extends Component {
     constructor () {
         super();
         this.state = { displayBio: false };
+
+        this.toggleDisplayBio = this.toggleDisplayBio.bind(this);
+    };
+
+    toggleDisplayBio () {
+        this.setState({ displayBio: !this.state.displayBio });
     };
 
     render () {
@@ -18,8 +24,13 @@ class App extends Component {
                             <p>I live in Cracow, and code every day</p>
                             <p>My favorite language is JavaScript, and i think React.js is awesome</p>
                             <p>Besides coding, I also love music, sports and good food :D</p>
+                            <button onClick={this.toggleDisplayBio}>Show less</button>
                         </div>
-                    ) : null
+                    ) : (
+                        <div>
+                            <button onClick={this.toggleDisplayBio}>Read more</button>
+                        </div>
+                    )
                 }
             </div>
         );
