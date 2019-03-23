@@ -1,11 +1,11 @@
-import emailIcon from '../assets/email_icon';
-import githubIcon from '../assets/github_icon';
-import linkedinIcon from '../assets/linkedin_icon';
+import emailIcon from '../assets/email_icon.png';
+import githubIcon from '../assets/github_icon.png';
+import linkedinIcon from '../assets/linkedin_icon.png';
 
 const SOCIAL_PROFILES = [
     {
         id: 1,
-        link: 'mailto:michaljaniczko@gmail.com',
+        link: 'michaljaniczko@gmail.com',
         image: emailIcon
     },
     {
