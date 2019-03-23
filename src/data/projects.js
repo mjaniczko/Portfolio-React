@@ -7,21 +7,21 @@ const PROJECTS = [
         id: 1,
         title: 'Example React Application',
         description: 'A React App that I built, involving JS and core web dev concepts',
-        link: 'https://github.com/mjaniczko/Portfolio-React',
+        link: 'https://github.com/mjaniczko/',
         image: project1
     },
     {
         id: 2,
         title: 'My API',
         description: 'A REST API that I built frm scratch with GET and POST requests',
-        link: 'https://github.com/mjaniczko/...',
+        link: 'https://github.com/mjaniczko/',
         image: project2
     },
     {
         id: 3,
         title: 'Operating Systems Final Project',
         description: 'My unique final project for my university Operating System course',
-        link: 'https://github.com/mjaniczko/...',
+        link: 'https://github.com/mjaniczko/',
         image: project3
     }
 
