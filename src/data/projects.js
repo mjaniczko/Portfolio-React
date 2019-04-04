@@ -13,7 +13,7 @@ const PROJECTS = [
     {
         id: 2,
         title: 'My API',
-        description: 'A REST API that I built frm scratch with GET and POST requests',
+        description: 'A REST API that I built from scratch with GET and POST requests',
         link: 'https://github.com/mjaniczko/',
         image: project2
     },
