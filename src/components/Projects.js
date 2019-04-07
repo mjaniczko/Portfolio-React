@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import PROJECTS from '../data/projects';
 
-class Project extends Component {
-
-	render () {
-
-	const { title, image, description, link } = this.props.project;
+const Project = props => {
+	const { title, image, description, link } = props.project;
 
 	return (
    	<div style={{ display: 'inline-block', width: 300, margin: 10 }}>
@@ -16,7 +13,6 @@ class Project extends Component {
     	</div>
   	)
 
-  	}
 }
 
 class Projects extends Component {
