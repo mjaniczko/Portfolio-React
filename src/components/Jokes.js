@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 
-const Joke = ({ joke }) => {
-  const { setup, punchline } = joke;
-  return <p>{setup} <em>{punchline}</em></p>
-}
+const Joke = ({ joke: { setup, punchline } }) => (
+  <p style={{ margin: 20 }}>{setup} <em>{punchline}</em></p>
+)
 
 class Jokes extends Component {
   state = { joke: {}, jokes: [] };
@@ -32,11 +31,7 @@ class Jokes extends Component {
 
         <h3>Want ten new jokes?</h3>
         <button onClick={this.fetchJokes}>Click me!</button>
-        {
-          this.state.jokes.map(joke => {
-            return <Joke key={joke.id} joke={joke} />
-          })
-        }
+        { this.state.jokes.map(joke => (<Joke key={joke.id} joke={joke} />)) }
       </div>
     )
   }
