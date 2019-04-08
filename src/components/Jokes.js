@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 
+const Joke = ({ joke }) => {
+  const { setup, punchline } = joke;
+  return <p>{setup} <em>{punchline}</em></p>
+}
+
 class Jokes extends Component {
-  state = { joke: {} };
+  state = { joke: {}, jokes: [] };
 
   componentDidMount() {
     fetch('https://official-joke-api.appspot.com/random_joke')
@@ -9,13 +14,29 @@ class Jokes extends Component {
       .then(json => this.setState({ joke: json }))
   }
 
+  fetchJokes = () => {
+    fetch('https://official-joke-api.appspot.com/random_ten')
+      .then(respone => respone.json())
+      .then(json => this.setState({ jokes: json}));
+  }
+
   render () {
-    const { setup, punchline } = this.state.joke;
 
     return (
       <div>
+
         <h2>Highlighted Joke</h2>
-        <p>{setup} <em>{punchline}</em></p>
+        <Joke joke={this.state.joke}/>
+
+        <hr />
+
+        <h3>Want ten new jokes?</h3>
+        <button onClick={this.fetchJokes}>Click me!</button>
+        {
+          this.state.jokes.map(joke => {
+            return <Joke key={joke.id} joke={joke} />
+          })
+        }
       </div>
     )
   }
